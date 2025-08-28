@@ -1,0 +1,106 @@
+# This file contains Home Assistant input_number entities.
+# Define input_number helpers here - adjustable sliders and number inputs for user control.
+# These are useful for setting thresholds, delays, and numeric values in automations and dashboards.
+# Input numbers can be used to create dynamic, user-configurable automation parameters.
+#
+# Example input_number configuration (commented out):
+#
+# example_slider:
+#   name: "Example Slider"
+#   min: 0
+#   max: 100
+#   step: 5
+#   initial: 50
+#   unit_of_measurement: "%"
+#   icon: mdi:tune-vertical
+#   mode: slider
+#
+# example_box:
+#   name: "Example Number Box"
+#   min: 1
+#   max: 24
+#   step: 1
+#   initial: 12
+#   unit_of_measurement: "hours"
+#   icon: mdi:timer
+#   mode: box
+
+# Input Numbers for Home Assistant
+# These provide adjustable sliders and number inputs for automations
+
+# Humidity Control
+humidity_threshold:
+  name: "High Humidity Threshold"
+  min: 40
+  max: 80
+  step: 1
+  initial: 55
+  unit_of_measurement: "%"
+  icon: mdi:water-percent
+
+humidity_low_threshold:
+  name: "Low Humidity Threshold"
+  min: 10
+  max: 40
+  step: 1
+  initial: 30
+  unit_of_measurement: "%"
+  icon: mdi:water-percent
+
+# Temperature Control
+temperature_comfort_min:
+  name: "Comfort Temperature Minimum"
+  min: 60
+  max: 75
+  step: 1
+  initial: 68
+  unit_of_measurement: "°F"
+  icon: mdi:thermometer
+
+temperature_comfort_max:
+  name: "Comfort Temperature Maximum"
+  min: 70
+  max: 80
+  step: 1
+  initial: 72
+  unit_of_measurement: "°F"
+  icon: mdi:thermometer
+
+# Lighting Control
+sunset_offset:
+  name: "Sunset Offset"
+  min: -60
+  max: 60
+  step: 5
+  initial: -15
+  unit_of_measurement: "minutes"
+  icon: mdi:weather-sunset
+
+sunrise_offset:
+  name: "Sunrise Offset"
+  min: -60
+  max: 60
+  step: 5
+  initial: 30
+  unit_of_measurement: "minutes"
+  icon: mdi:weather-sunrise
+
+# Motion Detection
+motion_timeout:
+  name: "Motion Light Timeout"
+  min: 1
+  max: 30
+  step: 1
+  initial: 5
+  unit_of_measurement: "minutes"
+  icon: mdi:motion-sensor
+
+# Security Settings
+door_alert_delay:
+  name: "Door Open Alert Delay"
+  min: 5
+  max: 60
+  step: 5
+  initial: 10
+  unit_of_measurement: "minutes"
+  icon: mdi:door-open

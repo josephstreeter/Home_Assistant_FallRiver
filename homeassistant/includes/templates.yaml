@@ -1,0 +1,25 @@
+# This file contains Home Assistant template sensors.
+# Use this file to define template-based entities, such as sensors,
+# whose state, attributes, or availability are determined by Jinja2 templates.
+# Example templates are provided below.
+# Add your own template entities following the examples.
+
+# Example Home Assistant template sensors (commented out)
+#
+# - sensor:
+#     - name: "Living Room Temperature Rounded"
+#       state: >
+#         {{ states('sensor.living_room_temp') | float | round(1) }}
+#       unit_of_measurement: "°C"
+#       device_class: temperature
+#       availability: >
+#         {{ states('sensor.living_room_temp') not in ['unknown', 'unavailable'] }}
+#     
+#     - name: "Daily Energy Cost"
+#       state: >
+#         {{ (states('sensor.daily_energy') | float * 0.12) | round(2) }}
+#       unit_of_measurement: "$"
+#       icon: mdi:currency-usd
+#       attributes:
+#         energy_used: "{{ states('sensor.daily_energy') }} kWh"
+#

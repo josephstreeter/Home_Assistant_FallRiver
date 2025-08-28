@@ -1,0 +1,37 @@
+# This workflow runs on your self-hosted runner and deploys docker-compose and config files to your Docker host.
+# It assumes your runner has access to the correct directories and Docker.
+
+name: Deploy Docker Compose Stack
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy updated stack
+        run: |
+          echo "Deploying updated Docker Compose stack..."
+          whoami
+          echo "Creating directories if they don't exist..."
+          sudo mkdir -p /docker/homeassistant
+          sudo mkdir -p /docker/homeassistant/homeassistant
+          cd /docker/homeassistant
+          
+          sudo cp $GITHUB_WORKSPACE/docker-compose.yml ./
+          sudo cp $GITHUB_WORKSPACE/homeassistant/configuration.yaml ./homeassistant/
+          sudo cp -r $GITHUB_WORKSPACE/homeassistant/includes ./homeassistant/
+          sudo docker-compose up -d
+        shell: bash
+
+      - name: Verify deployment
+        run: |
+          cd /docker/homeassistant
+          sudo docker-compose ps
+        shell: bash
