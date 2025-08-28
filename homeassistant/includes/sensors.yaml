@@ -123,84 +123,84 @@
       availability_template: >
         {{ states('sensor.nws_alert_event_raw') not in ['unknown', 'unavailable'] }}
 
-    nws_alert_severity:
-      friendly_name: "Weather Alert Severity"
-      value_template: >
-        {% set features = state_attr('sensor.nws_alert_event_raw', 'features') %}
-        {% if features and features | length > 0 %}
-          {{ features[0].properties.severity | default('Unknown') }}
-        {% else %}
-          None
-        {% endif %}
-      availability_template: >
-        {{ state_attr('sensor.nws_alert_event_raw', 'features') is not none }}
+    # nws_alert_severity:
+    #   friendly_name: "Weather Alert Severity"
+    #   value_template: >
+    #     {% set features = state_attr('sensor.nws_alert_event_raw', 'features') %}
+    #     {% if features and features | length > 0 %}
+    #       {{ features[0].properties.severity | default('Unknown') }}
+    #     {% else %}
+    #       None
+    #     {% endif %}
+    #   availability_template: >
+    #     {{ state_attr('sensor.nws_alert_event_raw', 'features') is not none }}
 
-    nws_alert_urgency:
-      friendly_name: "Weather Alert Urgency"
-      value_template: >
-        {% set features = state_attr('sensor.nws_alert_event_raw', 'features') %}
-        {% if features and features | length > 0 %}
-          {{ features[0].properties.urgency | default('Unknown') }}
-        {% else %}
-          None
-        {% endif %}
-      availability_template: >
-        {{ state_attr('sensor.nws_alert_event_raw', 'features') is not none }}
+    # nws_alert_urgency:
+    #   friendly_name: "Weather Alert Urgency"
+    #   value_template: >
+    #     {% set features = state_attr('sensor.nws_alert_event_raw', 'features') %}
+    #     {% if features and features | length > 0 %}
+    #       {{ features[0].properties.urgency | default('Unknown') }}
+    #     {% else %}
+    #       None
+    #     {% endif %}
+    #   availability_template: >
+    #     {{ state_attr('sensor.nws_alert_event_raw', 'features') is not none }}
 
-    nws_alert_headline:
-      friendly_name: "Weather Alert Headline"
-      value_template: >
-        {% set features = state_attr('sensor.nws_alert_event_raw', 'features') %}
-        {% if features and features | length > 0 %}
-          {{ features[0].properties.headline | default('Alert Active') }}
-        {% else %}
-          No alerts
-        {% endif %}
-      availability_template: >
-        {{ state_attr('sensor.nws_alert_event_raw', 'features') is not none }}
+    # nws_alert_headline:
+    #   friendly_name: "Weather Alert Headline"
+    #   value_template: >
+    #     {% set features = state_attr('sensor.nws_alert_event_raw', 'features') %}
+    #     {% if features and features | length > 0 %}
+    #       {{ features[0].properties.headline | default('Alert Active') }}
+    #     {% else %}
+    #       No alerts
+    #     {% endif %}
+    #   availability_template: >
+    #     {{ state_attr('sensor.nws_alert_event_raw', 'features') is not none }}
 
-    nws_alert_description:
-      friendly_name: "Weather Alert Description"
-      value_template: >
-        {% set features = state_attr('sensor.nws_alert_event_raw', 'features') %}
-        {% if features and features | length > 0 %}
-          {{ features[0].properties.description | default('No description available') | truncate(255) }}
-        {% else %}
-          No alerts
-        {% endif %}
-      availability_template: >
-        {{ state_attr('sensor.nws_alert_event_raw', 'features') is not none }}
+    # nws_alert_description:
+    #   friendly_name: "Weather Alert Description"
+    #   value_template: >
+    #     {% set features = state_attr('sensor.nws_alert_event_raw', 'features') %}
+    #     {% if features and features | length > 0 %}
+    #       {{ features[0].properties.description | default('No description available') | truncate(255) }}
+    #     {% else %}
+    #       No alerts
+    #     {% endif %}
+    #   availability_template: >
+    #     {{ state_attr('sensor.nws_alert_event_raw', 'features') is not none }}
 
-    nws_alert_effective_time:
-      friendly_name: "Weather Alert Effective Time"
-      value_template: >
-        {% set features = state_attr('sensor.nws_alert_event_raw', 'features') %}
-        {% if features and features | length > 0 %}
-          {% set effective = features[0].properties.effective %}
-          {% if effective %}
-            {{ as_timestamp(effective) | timestamp_custom('%Y-%m-%d %H:%M:%S') }}
-          {% else %}
-            Unknown
-          {% endif %}
-        {% else %}
-          None
-        {% endif %}
-      availability_template: >
-        {{ state_attr('sensor.nws_alert_event_raw', 'features') is not none }}
+    # nws_alert_effective_time:
+    #   friendly_name: "Weather Alert Effective Time"
+    #   value_template: >
+    #     {% set features = state_attr('sensor.nws_alert_event_raw', 'features') %}
+    #     {% if features and features | length > 0 %}
+    #       {% set effective = features[0].properties.effective %}
+    #       {% if effective %}
+    #         {{ as_timestamp(effective) | timestamp_custom('%Y-%m-%d %H:%M:%S') }}
+    #       {% else %}
+    #         Unknown
+    #       {% endif %}
+    #     {% else %}
+    #       None
+    #     {% endif %}
+    #   availability_template: >
+    #     {{ state_attr('sensor.nws_alert_event_raw', 'features') is not none }}
 
-    nws_alert_expires_time:
-      friendly_name: "Weather Alert Expires Time"
-      value_template: >
-        {% set features = state_attr('sensor.nws_alert_event_raw', 'features') %}
-        {% if features and features | length > 0 %}
-          {% set expires = features[0].properties.expires %}
-          {% if expires %}
-            {{ as_timestamp(expires) | timestamp_custom('%Y-%m-%d %H:%M:%S') }}
-          {% else %}
-            Unknown
-          {% endif %}
-        {% else %}
-          None
-        {% endif %}
-      availability_template: >
-        {{ state_attr('sensor.nws_alert_event_raw', 'features') is not none }}
+    # nws_alert_expires_time:
+    #   friendly_name: "Weather Alert Expires Time"
+    #   value_template: >
+    #     {% set features = state_attr('sensor.nws_alert_event_raw', 'features') %}
+    #     {% if features and features | length > 0 %}
+    #       {% set expires = features[0].properties.expires %}
+    #       {% if expires %}
+    #         {{ as_timestamp(expires) | timestamp_custom('%Y-%m-%d %H:%M:%S') }}
+    #       {% else %}
+    #         Unknown
+    #       {% endif %}
+    #     {% else %}
+    #       None
+    #     {% endif %}
+    #   availability_template: >
+    #     {{ state_attr('sensor.nws_alert_event_raw', 'features') is not none }}
