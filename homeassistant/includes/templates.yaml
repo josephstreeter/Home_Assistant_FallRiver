@@ -24,34 +24,34 @@
 #         energy_used: "{{ states('sensor.daily_energy') }} kWh"
 #
 
-- sensor:
-    - name: "All Doors"
-      unique_id: dynamic_doors_list
-      state: "Available" # This state is optional but can be used for a count of open doors
-      attributes:
-        entities: >
-          {{ states.binary_sensor | selectattr('attributes.device_class', 'in', ['door') | map(attribute='entity_id') | list }}
+# - sensor:
+#     - name: "All Doors"
+#       unique_id: dynamic_doors_list
+#       state: "Available" # This state is optional but can be used for a count of open doors
+#       attributes:
+#         entities: >
+#           {{ states.binary_sensor | selectattr('attributes.device_class', 'in', ['door') | map(attribute='entity_id') | list }}
 
-- sensor:
-    - name: "All Windows"
-      unique_id: dynamic_windows_list
-      state: "Available" # This state is optional but can be used for a count of open doors
-      attributes:
-        entities: >
-          {{ states.binary_sensor | selectattr('attributes.device_class', 'in', ['window']) | map(attribute='entity_id') | list }}
+# - sensor:
+#     - name: "All Windows"
+#       unique_id: dynamic_windows_list
+#       state: "Available" # This state is optional but can be used for a count of open doors
+#       attributes:
+#         entities: >
+#           {{ states.binary_sensor | selectattr('attributes.device_class', 'in', ['window']) | map(attribute='entity_id') | list }}
 
-- sensor:
-    - name: "All Doors and Windows"
-      unique_id: dynamic_doors_and_windows_list
-      state: "Available" # This state is optional but can be used for a count of open doors
-      attributes:
-        entities: >
-          {{ states.binary_sensor | selectattr('attributes.device_class', 'in', ['door', 'window']) | map(attribute='entity_id') | list }}
+# - sensor:
+#     - name: "All Doors and Windows"
+#       unique_id: dynamic_doors_and_windows_list
+#       state: "Available" # This state is optional but can be used for a count of open doors
+#       attributes:
+#         entities: >
+#           {{ states.binary_sensor | selectattr('attributes.device_class', 'in', ['door', 'window']) | map(attribute='entity_id') | list }}
 
-- sensor:
-    - name: "All Lights"
-      unique_id: dynamic_light_list
-      state: "Available" # This state is optional but can be used for a count of open doors
-      attributes:
-        entities: >
-          {{ states.binary_sensor | selectattr('attributes.device_class', 'in', ['light']) | map(attribute='entity_id') | list }}
+# - sensor:
+#     - name: "All Lights"
+#       unique_id: dynamic_light_list
+#       state: "Available" # This state is optional but can be used for a count of open doors
+#       attributes:
+#         entities: >
+#           {{ states.binary_sensor | selectattr('attributes.device_class', 'in', ['light']) | map(attribute='entity_id') | list }}

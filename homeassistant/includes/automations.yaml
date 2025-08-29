@@ -26,53 +26,53 @@
 #         brightness: 255
 #   mode: single
 
-- id: "Update_dynamic_openings_group"
-  alias: "Update dynamic openings group"
-  trigger:
-    - platform: homeassistant
-      event: start
-  action:
-    - service: group.set
-      data:
-        object_id: all_openings
-        entities: >
-          {{ state_attr('sensor.all_doors_and_windows', 'entities') | join(', ') }}
+# - id: "Update_dynamic_openings_group"
+#   alias: "Update dynamic openings group"
+#   trigger:
+#     - platform: homeassistant
+#       event: start
+#   action:
+#     - service: group.set
+#       data:
+#         object_id: all_openings
+#         entities: >
+#           {{ state_attr('sensor.all_doors_and_windows', 'entities') | join(', ') }}
 
-- id: "Update_dynamic_windows_group"
-  alias: "Update dynamic windows group"
-  trigger:
-    - platform: homeassistant
-      event: start
-  action:
-    - service: group.set
-      data:
-        object_id: all_windows
-        entities: >
-          {{ state_attr('sensor.all_windows', 'entities') | join(', ') }}
+# - id: "Update_dynamic_windows_group"
+#   alias: "Update dynamic windows group"
+#   trigger:
+#     - platform: homeassistant
+#       event: start
+#   action:
+#     - service: group.set
+#       data:
+#         object_id: all_windows
+#         entities: >
+#           {{ state_attr('sensor.all_windows', 'entities') | join(', ') }}
 
-- id: "Update_dynamic_doors_group"
-  alias: "Update dynamic doors group"
-  trigger:
-    - platform: homeassistant
-      event: start
-  action:
-    - service: group.set
-      data:
-        object_id: all_doors
-        entities: >
-          {{ state_attr('sensor.all_doors', 'entities') | join(', ') }}
+# - id: "Update_dynamic_doors_group"
+#   alias: "Update dynamic doors group"
+#   trigger:
+#     - platform: homeassistant
+#       event: start
+#   action:
+#     - service: group.set
+#       data:
+#         object_id: all_doors
+#         entities: >
+#           {{ state_attr('sensor.all_doors', 'entities') | join(', ') }}
 
-- id: "Update_dynamic_lights_group"
-  alias: "Update dynamic lights group"
-  trigger:
-    - platform: homeassistant
-      event: start
-  action:
-    - service: group.set
-      data:
-        object_id: all_lights
-        entities: >
-          {{ state_attr('sensor.all_lights', 'entities') | join(', ') }}
+# - id: "Update_dynamic_lights_group"
+#   alias: "Update dynamic lights group"
+#   trigger:
+#     - platform: homeassistant
+#       event: start
+#   action:
+#     - service: group.set
+#       data:
+#         object_id: all_lights
+#         entities: >
+#           {{ state_attr('sensor.all_lights', 'entities') | join(', ') }}
 
 - id: test_automation_sample
   alias: 'Test: Sample Automation'

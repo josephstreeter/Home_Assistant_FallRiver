@@ -24,29 +24,29 @@
 # Groups for Home Assistant
 # These organize entities for easier management and automation
 
-## All Lights
-all_lights:
-  name: All Lights
-  unique_id: all_lights_group
-  entities: []
+# ## All Lights
+# all_lights:
+#   name: All Lights
+#   unique_id: all_lights_group
+#   entities: []
 
-# All openings
-all_openings:
-  name: All Openings
-  unique_id: all_openings_group
-  entities: []
+# # All openings
+# all_openings:
+#   name: All Openings
+#   unique_id: all_openings_group
+#   entities: []
 
-# All Windows
-all_windows:
-  name: All Windows
-  unique_id: all_windows_group
-  entities: []
+# # All Windows
+# all_windows:
+#   name: All Windows
+#   unique_id: all_windows_group
+#   entities: []
 
-# All Doors
-all_doors:
-  name: All Doors
-  unique_id: all_doors_group
-  entities: []
+# # All Doors
+# all_doors:
+#   name: All Doors
+#   unique_id: all_doors_group
+#   entities: []
 
 # Temperature Sensors
 
