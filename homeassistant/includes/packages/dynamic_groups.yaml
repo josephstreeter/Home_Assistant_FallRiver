@@ -17,7 +17,6 @@ group:
   # All Doors
   all_doors:
     name: All Doors
-    unique_id: all_doors_group
     entities: []
 
 template:
