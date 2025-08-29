@@ -1,4 +1,4 @@
-groups:
+group:
   ## All Lights
   all_lights:
     name: All Lights
@@ -23,7 +23,7 @@ groups:
     unique_id: all_doors_group
     entities: []
 
-templates:
+template:
   - sensor:
     - name: "All Doors"
       unique_id: dynamic_doors_list
@@ -56,7 +56,7 @@ templates:
           entities: >
             {{ states.binary_sensor | selectattr('attributes.device_class', 'in', ['light']) | map(attribute='entity_id') | list }}
 
-automations:
+automation:
   - id: "Update_dynamic_openings_group"
     alias: "Update dynamic openings group"
     trigger:
