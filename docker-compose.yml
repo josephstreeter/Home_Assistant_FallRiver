@@ -2,7 +2,7 @@
 services:
   homeassistant:
     container_name: ha
-    image: "homeassistant/home-assistant:2025.1.0"
+    image: "homeassistant/home-assistant:2025.8.3"
     volumes:
       - ha_data:/config/
       - ./homeassistant/configuration.yaml:/config/configuration.yaml
