@@ -163,10 +163,10 @@ welcome_home:
 
 # Script for system status notifications
 send_system_status:
-  alias: "Send System Status"
+  alias: "System Status Notification"
   description: "Send comprehensive system status notification"
   sequence:
-    - service: notify.persistent_notification
+    - service: persistent_notification.create
       data:
         message: >
           System Status Report:
