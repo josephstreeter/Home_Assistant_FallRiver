@@ -1,10 +1,10 @@
 # Notifications Package
 # This package contains all notification-related configuration
 
-notify:
-  # Persistent notifications for important system messages
-  - platform: persistent_notification
-    name: "system_notifications"
+# notify:
+#   # Persistent notifications for important system messages
+#   - platform: persistent_notification
+#     name: "system_notifications"
 
 # Input text for custom notification messages
 input_text:
