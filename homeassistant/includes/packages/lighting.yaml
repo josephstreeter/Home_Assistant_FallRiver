@@ -39,9 +39,9 @@ automation:
         entity_id: input_boolean.auto_lights
         state: 'on'
     action:
-      - service: scene.turn_off
+      - service: light.turn_off
         target:
-          entity_id: scene.evening_dusk_to_dawn_lighting
+          entity_id: all
       - service: persistent_notification.create
         data:
           message: Morning lights turned off at sunrise
