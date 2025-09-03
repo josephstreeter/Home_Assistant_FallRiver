@@ -25,7 +25,7 @@ automation:
       - condition: template
         value_template: "{{ trigger.to_state.state | length > 0 }}"
     action:
-      - service: notify.persistent_notification
+      - service: persistent_notification.create
         data:
           message: "{{ states('input_text.custom_notification') }}"
           title: "Custom Message"

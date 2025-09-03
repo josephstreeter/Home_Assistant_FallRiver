@@ -17,7 +17,7 @@
 #         brightness: 255
 #         color_name: "blue"
 #     - delay: "00:00:02"
-#     - service: notify.persistent_notification
+#     - service: persistent_notification.create
 #       data:
 #         title: "Script Executed"
 #         message: "Example script completed at {{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
@@ -57,12 +57,12 @@ enable_system_monitor:
                 | list
               }}
           continue_on_error: true
-        - service: notify.persistent_notification
+        - service: persistent_notification.create
           data:
             title: "System Monitor Enabled"
             message: "System monitor integration checked and all entities enabled at {{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
       else:
-        - service: notify.persistent_notification
+        - service: persistent_notification.create
           data:
             title: "System Monitor Integration Required"
             message: "System Monitor integration not found. Please add the System Monitor integration manually through Settings > Devices & Services > Add Integration."
@@ -74,7 +74,7 @@ startup_routine:
     - service: homeassistant.update_entity
       target:
         entity_id: all
-    - service: notify.persistent_notification
+    - service: persistent_notification.create
       data:
         title: "Home Assistant Started"
         message: "System startup complete at {{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
@@ -104,7 +104,7 @@ bedtime_routine:
     - service: alarm_control_panel.alarm_arm_night
       target:
         entity_id: all
-    - service: notify.persistent_notification
+    - service: persistent_notification.create
       data:
         title: "Bedtime Routine Complete"
         message: "Good night! Bedtime routine executed at {{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
@@ -130,7 +130,7 @@ away_mode:
     - service: alarm_control_panel.alarm_arm_away
       target:
         entity_id: all
-    - service: notify.persistent_notification
+    - service: persistent_notification.create
       data:
         title: "Away Mode Activated"
         message: "House secured for away mode at {{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
@@ -156,7 +156,7 @@ welcome_home:
     - service: alarm_control_panel.alarm_disarm
       target:
         entity_id: all
-    - service: notify.persistent_notification
+    - service: persistent_notification.create
       data:
         title: "Welcome Home"
         message: "Welcome back! Home sweet home at {{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
